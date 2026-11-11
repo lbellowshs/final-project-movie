@@ -45,7 +45,7 @@ async function fetchMovies(searchTerm) {
 	showSkeletons();
 
 	const res = await fetch(
-		`http://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}&s=${searchTerm}`,
+		`https://www.omdbapi.com/?apikey=${API_KEY}&s=${encodeURIComponent(searchTerm)}`,
 	);
 	const data = await res.json();
 
